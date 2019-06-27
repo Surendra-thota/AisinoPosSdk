@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.aisino.printer.plugin" version="0.0.1" 
+    xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AisinoPrinterPlugin</name>
+    <js-module name="AisinoPrinterPlugin" src="www/AisinoPrinterPlugin.js">
+        <clobbers target="cordova.plugins.AisinoPrinterPlugin" />
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="AisinoPrinterPlugin">
+                <param name="android-package" value="com.aisino.printer.plugin.AisinoPrinterPlugin" />
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml"></config-file>
+        <framework src="src/android/aisino.gradle" custom="true" type="gradleReference"/>
+        <source-file src="src/android/AisinoPrinterPlugin.java" target-dir="src/com/aisino/printer/plugin/AisinoPrinterPlugin" />
+        <source-file src="src/android/jniLibs/arm64-v8a/libA90JavahCore.so" target-dir="jniLibs/arm64-v8a" />
+        <source-file src="src/android/jniLibs/armeabi/libA90JavahCore.so" target-dir="jniLibs/armeabi" />
+        <source-file src="src/android/jniLibs/armeabi-v7a/libA90JavahCore.so" target-dir="jniLibs/armeabi-v7a" />
+        <lib-file src="src/android/libs/AppSdkAidl.jar" />
+        <lib-file src="src/android/libs/vanstoneSdkClient-noemv.jar" />
+        <lib-file src="src/android/jniLibs/arm64-v8a/libA90JavahCore.so" />
+        <lib-file src="src/android/jniLibs/armeabi/libA90JavahCore.so" />
+        <lib-file src="src/android/jniLibs/armeabi-v7a/libA90JavahCore.so" />
+        <resource-file src="src/android/res/drawable/logo.png" target="res/drawable/logo.png" />
+        <resource-file src="src/android/res/drawable/baharanlogo.png" target="res/drawable/baharanlogo.png" />
+    </platform>
+</plugin>

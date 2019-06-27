@@ -1,0 +1,14 @@
+repositories {
+    jcenter()
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+android {
+    defaultConfig {
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
+    }
+}
