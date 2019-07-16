@@ -76,7 +76,7 @@ public class AisinoPrinterPlugin extends CordovaPlugin {
             String receiptNumber = "";
             String invoiceNumber = "";
             String paymentMode = "Cash";
-            Float amount = 0f;
+            String amount = "";
             Boolean isThanksNote = false;
 
             try {
@@ -86,9 +86,7 @@ public class AisinoPrinterPlugin extends CordovaPlugin {
                 receiptNumber = printData.has("receiptNumber") ? printData.getString("receiptNumber") : null;
                 invoiceNumber = printData.has("invoiceNo") ? printData.getString("invoiceNo") : null;
                 paymentMode = printData.has("paymentMode") ? printData.getString("paymentMode") : "Cash";
-                amount = printData.has("amountPaid")
-                        ? BigDecimal.valueOf(printData.getDouble("amountPaid")).floatValue()
-                        : 0f;
+                amount = printData.has("amountPaid") ? printData.getString("amountPaid") : "0";
                 isThanksNote = printData.has("isThanksNote") ? printData.getBoolean("isThanksNote") : false;
             } catch (Exception e) {
                 System.out.println("Fetch Data " + e.getMessage());
